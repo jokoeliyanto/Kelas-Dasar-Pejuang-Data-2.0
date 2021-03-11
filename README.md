@@ -9,7 +9,7 @@ Ahmad Dahlan University.
 
 The following is a list of the contents of this repository:
 1. [KD0101A] - Introduction to Google Colab
-2. [KD0101B] - Managing Files on Google Colab
+
 
 =========================================================================================
 
@@ -19,4 +19,4 @@ Universitas Ahmad Dahlan.
 
 Berikut daftar isi dari repository ini:
 1. [KD0101A] - Pengenalan Google Colab
-2. [KD0101B] - Mengelola File Pada Google Colab
+
