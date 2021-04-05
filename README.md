@@ -49,7 +49,7 @@ Berikut daftar isi dari repository ini:
 6. [KD0301] - [List, String & Dictionary in Python(Python)](https://github.com/jokoeliyanto/Kelas-Dasar-Pejuang-Data-2.0/blob/main/%5BKD0301%5D_List%2C_String_%26_Dictionary.ipynb)
 7. [KD0302] - [Vektor Pada R](https://raw.githubusercontent.com/jokoeliyanto/Kelas-Dasar-Pejuang-Data-2.0/main/%5BKD0302%5D%20Vektor%20Pada%20R.R)
 8. [KD0401] - [Data Frame Pada Python](https://github.com/jokoeliyanto/Kelas-Dasar-Pejuang-Data-2.0/blob/main/%5BKD0401%5DData_Frame_Pada_Python.ipynb)
-9. [KD0402] - Data Frame Pada R
+9. [KD0402] - [Data Frame Pada R](https://github.com/jokoeliyanto/Kelas-Dasar-Pejuang-Data-2.0/blob/main/%5BKD0402%5DData%20Frame%20Pada%20R.Rmd)
 10. [KD0501] - Fungsi, Percabangan, dan Perulangan Pada Python
 11. [KD0502] - Fungsi, Percabangan, dan Perulangan Pada R
 12. Python Modul Recap
