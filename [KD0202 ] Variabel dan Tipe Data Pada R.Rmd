@@ -1,0 +1,599 @@
+---
+title: "Variabel dan Type Data Pada R"
+author: "PSDS Matematika UAD"
+date: "3/19/2021"
+output: html_document
+---
+![](C:/Users/asusa/OneDrive/Documents/R/Header KD 0202.png)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Pendahuluan
+Assalamualaikum warahmatullahi wabarakatuh.
+Robbi zidni 'ilma warzuqni fahma.
+Ini adalah modul R for data science dalam bentuk markdown. Bagian yang sedang kamu baca ini merupakan bagian teks. Jika kamu ingin menampilkan kode R maka kamu harus membuat baris baru dengan cara sebagai berikut
+
+#```{r}
+
+#```
+
+tanpa tanda pagar.
+
+Untuk menjalankan kode tersebut kamu bisa menekan tombol play berwarna hijau pada ujung kanan atas pada line kode yang ingin kamu jalankan. Contoh:
+```{r}
+a=23
+print(a)
+c="Salam sahabat data"
+print(c)
+```
+R bisa difungsikan sebagai kalkulator canggih. Ini disebabkan R memiliki fungsi-fungsi matematika yang bahkan jauh lebih lengkap dari kalkulator. 
+Sebagai contoh kamu bisa melakukan penjumlahan variabel seperti di bawah ini:
+
+```{r}
+Kilometer_ke_meter =1*1000
+dua_Kilometer_ke_meter=Kilometer_ke_meter*2
+print(dua_Kilometer_ke_meter)
+```
+
+**Comment pada R**
+
+Comment merupakan teks untuk menambahkan keterangan pada code kita,
+sehingga kita akan ingat apa yang dilakukan ketika membuka kembali code tersebut. Comment tidak dianggap sebagai code yang bisa dieksekusi. Pada R penggunaan comment adalah dengan mengawali suatu teks dengan tanda '#'.
+
+*Berikut ini contoh penggunaan comment*
+10+11 #Ini adalah kolom komentar jawaban
+
+# Variabel Pada R
+
+Angka-angka yang kita gunakan dapat juga disimpan dengan sesuatu yang dinamakan variabel. variabel memiliki nama yang dapat kita definisikan dan gunakan untuk mengambil nilainya kembali.Sebagaimana bahasa pemrograman lain, dalam bahasa pemrograman R terdapat beberapa ketentuan dalam mendefinisikan Variabel. Berikut beberapa ketentuan pendefinisian/penamaan variabel dalam R:
+
+1. Nama variabel merupakan kombinasi dari huruf, angka, dan karakter.
+2. Tidak diperkenenankan menggunakan angka di awal nama variabel.
+3. Kapital berpengaruh dalam nama variabel(case sensitive)
+4. Nama variabel tidak boleh sama dengan nama fungsi/syntax dalam bahasa pemrograman R
+
+Contoh penulisan:
+
+```{r}
+Jarak_rumah_Alim_ke_kampus_Km <- 10
+
+Jarak_rumah_Aisyah_ke_kampus_Km <- 25
+
+Jarak_rumah_Alim_ke_kampus_Km
+
+Jarak_rumah_Aisyah_ke_kampus_Km 
+```
+
+Penulisan variabel juga dapat ditulis seperti dibawah ini:
+
+```{r}
+JmlhKelasDasar_=70
+print(JmlhKelasDasar_)
+
+PSDS_="Pusat studi Data Sains"
+print(PSDS_)
+
+#JmlhKelas Mahir=100    #Coba saja pasti Akan Error
+#print(JmlhKelas Mahir)
+```
+
+# Tipe Variabel Pada R
+
+Terdapat beberapa tipe variabel dalam R yaitu bilangan bulat(integer) seperti 5, bilangan real/double, bilangan kompleks, bilangan desimal seperti 4,5 diseut numerik, nilai teks disebut karakter/string, nilai boolean (TRUE or FALSE) disebut logikal/nilai kebenaran proposisi. Kamu bisa mengecek tipe variabel yang kamu definisikan dengan menggunakan fungsi ```typeof()```
+
+```{r}
+#Note: Bilangan Bulat/Integer
+#untuk memastikan bahwa variabel adalah integer digunakan huruf L
+#jika tidak maka secara default dianggap sebagai double
+x=2L
+typeof(x)
+
+#Note: Bilangan Real/Double
+y=2
+typeof(y)
+
+#Note: Bulangan kompleks
+#z=a+bi, i=akar kuadrat(-1)
+z=2+3i
+typeof(z)
+
+#Note: Karakter/Huruf/String
+#pakai tanda petik("")
+a="Pejuang Data"
+typeof(a)
+
+#Note: Logical/Nilai Kebenaran proposisi
+b=TRUE
+typeof(b)
+
+#bisa disingkat TRUE=T, FALSE=F
+c=F
+typeof(c)
+```
+
+# Vektor
+
+Vektor adalah struktur data pada R untuk menyimpan objek-objek dengan tipe yang sama. Di R, kamu dapat membuat vector dengan fungsi gabungan c (). Kamu dapat menempatkan elemen vector diantara tanda kurung dan dipisahkan oleh koma. Sebagai contoh:
+```{r}
+vektor_numerik <- c(1, 10, 49)
+vektor_character <- c("a","b","c")
+```
+
+kita juga bisa membuat rangkaian data dengan operator titik dua. 
+Sebagai contoh :
+```{r}
+c(1:5)
+```
+
+Terlihat perintah c(1:5) membuat vector dengan lima rangkaian angka yang dimulai dari 1 dan diakhiri nilai 5. Kemudian, jika kamu membuat vektor yang terdiri dari numerik dan string, maka secara default maka vektor tersebut dikenali sebagai vektor string:
+```{r}
+c(1, 'a', 0.5)
+```
+Pada R terdapat banyak fungsi analisa, salah satunya adalah fungsi summary.Fungsi ini bisa digunakan untuk mensimpulkan data yang lagi kita proses.
+Sebagi contoh :
+```{r}
+summary(c(1:5))
+```
+
+Ini artinya dari vector tersebut terdapat angka paling kecil 1 (Min), angka paling besar 5 (Max), angka rata-rata 3 (Mean), dan angka tengah 3 (Median). Untuk 1st Qu dan 3rd Qu kita abaikan dulu.
+
+# Matriks 
+
+Matriks adalah kumpulan bilangan yang disusun secara baris atau kolom atau kedua-duanya dan di dalam suatu tanda kurung. Bilangan-bilangan yang membentuk suatu matriks disebut sebagai elemen-elemen matriks. Matriks digunakan untuk menyederhanakan penyampaian data, sehingga mudah untuk diolah.
+
+**Membuat Matriks Pada R:**
+
+Pada modul kali ini, akan dibahas mengenai penggunaan fungsi matrix(). untuk menggunakan fungsi ini, Kita perlu menginputkan sebuah vektor kemudian ukuran dari matriks yang kita inginkan sehingga dapat terbentuk matriks sesuai dengan keinginan kita. Misal vektor [1,2,3,4] bisa dibuat menjadi matriks 2x2.
+
+```{r}
+#Mendefinisikan matriks A
+A <- matrix(c(1,2,3,4), #Vektor elemen matriks
+            2,               #Jumlah baris
+            2)               #Jumlah kolom
+A
+```
+
+**Mengecek apakah objek ini matriks atau bukan**
+
+```{r}
+#Apakah A matriks
+is.matrix(A)
+```
+
+**Operasi Matriks pada R**
+
+Untuk melakukan operasi Matriks, kita tinggal mendefinisikan matrik yang akan kita operasikan terlebih dahulu kemudian melakukan operasi layaknya kalkulator.
+```{r}
+#Mendefinisikan matriks A
+A <- matrix(c(2,3,-2,1,2,2),3,2)
+print(A)
+```
+```{r}
+#Mendefinisikan matriks B
+B <- matrix(c(1,4,-2,1,2,1),3,2)
+print(B)
+```
+
+**Perkalian dengan Matriks**
+
+```{r}
+C=A*2
+C
+```
+
+**Penjumlahan dan Pengurangan Matriks**
+
+```{r}
+#Penjumlahan Matriks
+D=A+C
+D
+#Pengurangan Matriks
+E=A-B
+E
+```
+
+**Transpose Matriks**
+
+```{r}
+H=t(A)
+H
+```
+
+**Jenis-Jenis Matriks**
+
+*Matriks Satuan*
+
+```{r}
+U<-matrix(1,  #Elemen satuan untuk matriks
+          5,  #Jumlah baris
+          5)  #Jumlah kolom
+U
+```
+
+*Matriks Nol*
+
+```{r}
+Z<-matrix(0,  #Elemen satuan untuk matriks
+          3,  #Jumlah baris
+          3)  #Jumlah kolom
+Z
+```
+
+*Matriks Diagonal*
+
+```{r}
+#Mendefinisikan matriks S
+S <- matrix(c(2,3,-2,1,2,2,4,2,3),3,3)
+print(S)
+```
+```{r}
+#Mengambil elemen diagonal matriks S
+D1<- diag(S)
+print(D1)
+```
+```{r}
+#Membuat matriks diagonal D1
+D1 <- diag(diag(S))
+D1
+```
+
+*Matriks Identitas*
+
+```{r}
+I <- diag(c(1,1,1))
+I
+```
+
+*Matriks Simetri*
+
+```{r}
+#Mendefinisikan matriks simetri K
+K <- matrix(c(2,1,5,1,3,4,5,4,-2),3,3)
+print(K)
+```
+```{r}
+#Transpose matriks K
+KT <- t(K)
+print(KT)
+```
+```{r}
+#Hasilnya adalah matriks K=KT (Simetri)
+```
+
+
+# DataFrame 
+
+Data frame adalah jenis struktur data yang dirancang untuk representasi tabel, yang terdiri dari banyak kolom dengan tiap kolom berisi list ataupun vector dengan jumlah data yang sama.
+
+Untuk membuat data frame kita bisa gunakan function data.frame.
+Contoh penggunaan :
+
+```{r}
+#Membuat dua variabel vector
+buah <- c("mangga", "jeruk", "manggis", "strawberry", "anggur")
+jumlah_buah <- c(50, 34, 21, 55, 63)
+
+#Membuat data frame dari kedua vector di atas
+info_buah <- data.frame(buah, jumlah_buah)
+
+#Melihat isi data frame
+info_buah
+
+#Buat vector baru sebagai representasi rasa buahnya
+rasa <- c("manis","masam","manis", "manis", "masam")
+
+#Buat data frame dari ketiga vector di atas
+info_buah <- data.frame(info_buah, rasa)
+
+#Tampilkan DataFrame
+info_buah
+```
+
+**Mengakses Data Frame**
+
+Data frame memiliki banyak kolom dan bisa diakses dengan nama kolom yang digunakan. Caranya adalah menggunakan accessor dengan tanda $ yang diikuti dengan nama kolom.
+Contoh: info_buah$rasa.
+```{r}
+#Membuat tiga variabel vector
+buah <- c("mangga", "jeruk", "manggis", "strawberry", "anggur")
+jumlah_buah <- c(50, 34, 21, 55, 63)
+rasa <- c("manis","masam","manis", "manis", "masam")
+
+#Membuat data frame dari kedua vector di atas
+info_buah <- data.frame(buah, jumlah_buah, rasa)
+
+#Menampilkan kolom rasa
+info_buah$rasa
+
+#Menampilkan kolom buah
+info_buah$buah
+```
+
+# Factor
+
+Factor adalah suatu variabel di R yang menyimpan daftar nilai-nilai kategori atau nominal.
+Beberapa contoh daftar nilai kategori yang bisa disimpan dalam factor:
+
+Nama bulan: Januari, Februari, Maret.
+Jenis pakaian: Atasan, Jeans, Rok, Kaos.
+Satuan berat: kg, mg, ton, kwintal.
+dan lain-lain.
+Dengan demikian,  factor menyimpan nilai-nilai yang terbatas (diskrit). Nama bulan terdiri dari 12 nilai yaitu dari Januari s/d Desember.
+
+Jika tidak terbatas atau kontinu, misalkan angka berat seperti 64.5 kg, 11.2 kg, 80.39 kg, dan seterusnya - maka ini tidak bisa digolongkan sebagai factor.
+
+Karena sifat data dengan nilai terbatas ini, factor sering disebut juga sebagai categorical variabel atau variabel kategorik.
+
+**Kenapa Factor, dan Kapan Sebaiknya Digunakan?**
+
+Factor adalah variabel yang sangat penting untuk digunakan pada kasus analisa statistik, menggambar grafik (plotting), pemodelan regresi ataupun machine learning.
+Banyaknya function yang menggunakan factor dikarenakan dengan adanya factor ini maka nilai kategoris lebih mudah diolah dan dianalisa.
+Kita sebaiknya menggunakan factor ketika kita ingin memastikan bahwa variabel yang kita gunakan memiliki data terbatas (diskrit) dan menginformasikan kepastian ini kepada function atau model analisa yang kita gunakan.
+
+**Membuat Factor di R**
+
+Factor dapat dibuat di R dengan function factor. Contoh, untuk membuat factor dari tiga nama hari kita gunakan perintah berikut:
+```{R}
+factor(c("Sen","Sel","Rab"))
+```
+
+ketika sudah di run terlihat ada dua hasil, yaitu nilai yang dimasukkan [1] adalah tampilan output dengan hasil tampilan dimulai pada indeks ke 1, Sen Sel Rab adalah tampilan dari nilai factor dan ada satu lagi output Levels, Levels: adalah atribut yang menempel pada setiap faktor dan berisi daftar diskrit dari variasi nilai-nilai yang terdapat pada faktor.
+
+Untuk kasus ini terdapat tiga nilai variasi yaitu Rab Sel  Sen - dan kebetulan sama dengan jumlah nilai yang terdapat pada factor saat ini, tetapi dengan urutan yang berbeda dengan tampilan isian factor.
+
+Pada levels, terlihat Rab dimulai duluan dibandingkan Sen karena secara urutan alfabet pertama pada Rab - yaitu R - lebih kecil dibandingkan alfabet pertama pada Sen - yaitu S.
+
+**Atribut levels dan class pada Factor**
+
+Perbandingan yang kontras antara factor dengan vector atau data.frame adalah pada factor terdapat atribut tambahan, yaitu levels.
+
+Atribut sendiri adalah variabel yang melekat dan menjadi bagian dari objek atau variabel lain.
+
+Selain atribut levels, pada factor terdapat juga atribut class.
+
+Untuk melihat seluruh atribut pada kita menggunakan function attributes, berikut adalah contoh penggunaannya.
+
+attributes(variabel)
+
+Dan nilai atribut tergantung penerapannya oleh R. Dan untuk levels, atributnya selalu bertipe karakter atau teks. Ini merupakan catatan penting yang sangat berguna dalam pemanfaatan factor lebih jauh.
+Contoh :
+```{R}
+#variabel factor bernama faktor.hari dengan nilai teks "Sen", "Sel", dan "Rab"
+faktor.hari <- factor(c("Sen","Sel","Rab"))
+attributes(faktor.hari)#[.]
+```
+
+Hasilnya menunjukkan terdapat dua atribut, yaitu levels dan class (ditandai dengan tanda $ pada nama atribut di depannya) dengan nilai-nilai atributnya (perhatikan semua memiliki tanda kutip pada nilainya - yang menandakan nilainya berupa karakter atau teks).
+
+Dan disini terlihat atribut class berisi "factor" - menandakan objek ini memang adalah sebuah factor. 
+
+**Function levels dan class pada Factor**
+
+Atribut levels dan class dapat juga dilihat dengan function levels dan class dengan input berupa factor, dengan konstruksi sebagai berikut:
+
+levels(variabel)
+class(variabel)
+
+Contoh penggunaan:
+```{R}
+#variabel factor bernama faktor.hari dengan nilai teks "Sen", "Sel", dan "Rab"
+faktor.hari <- factor(c("Sen","Sel","Rab"))
+levels(faktor.hari)#[.1.]
+class(faktor.hari)#[.2.]
+```
+
+**Perulangan Nilai pada Factor**
+
+Sebelumnya, factor diisi dengan tiga contoh nilai nama hari yang tidak berulang. Kali ini kita coba akan memasukkan nilai yang berulang, dimana "Sen" dan "Sel" akan dimasukkan berulang.
+
+Contoh penggunaannya:
+```{R}
+factor(c("Sen","Sel","Rab","Sen","Sel","Sen"))
+```
+
+Penjelasan dari hasil yang sudah di run :
+[1] adalah tampilan output dengan hasil tampilan dimulai pada indeks ke 1
+Sen Sel Rab Sen Sel Sen adalah tampilan dari nilai-nilai factor.
+
+Levels: adalah atribut yang menempel pada setiap faktor dan berisi daftar diskrit dari variasi nilai-nilai yang terdapat pada faktor.
+Variasi nilainya masih sama, yaitu tiga (Rab Sel Sen).
+
+**Penggunaan as.integer pada Factor**
+
+Untuk mengambil nilai-nilai index integer pada factor, kita bisa menggunakan function as.integer dengan syntax berikut.
+
+as.integer(variabel factor)
+
+Contoh penggunaannya :
+```{R}
+#Buatlah factor dengan teks "Sen", "Sel", "Rab","Sen","Sel", dan "Sen"
+factor.hari<- factor(c("Sen","Sel","Rab","Sen","Sel","Sen"))
+as.integer(factor.hari)#[.]
+```
+
+**Mengganti Elemen Factor**
+
+Sering sekali nilai kategori tidak sesuai dengan yang kita inginkan, sebagai contoh kita ingin nilai "Sen" ditampilkan sebagai "Senin". Di factor, kita lakukan ini dengan mengganti nilai levels pada index yang kita inginkan.
+
+Sebagai contoh terdapat satu variabel factor.hari dengan levels "Rab", "Sel", "Sen".
+Jika kita ingin ganti "Sel" (posisi ke 2 pada levels) menjadi "Selasa", maka perintah yang kita gunakan adalah:
+
+levels(factor.hari)
+[2] <- "Selasa"
+
+Keterangan :
+levels(.) = adalah fungsi untuk mengambil levels dari sebuah factor
+factor.bulan = adalah variabel factor
+[2] = Posisi kedua - dalam hal ini posisi dari levels
+<- = Operator assignment atau perintah untuk memasukkan data
+"Selasa" = Nilai yang akan dimasukkan ke levels posisi kedua
+
+Contoh :
+```{R}
+#Buatlah factor dengan teks "Sen", "Sel", "Rab","Sen","Sel", dan "Sen"
+factor.hari <- factor(c("Sen","Sel","Rab","Sen","Sel","Sen"))
+#Mengganti levels 
+levels(factor.hari)[2] <- "Selasa"
+levels(factor.hari)[3] <- "Senin"#[.1.]
+factor.hari#[.2.]
+```
+
+**Angka sebagai Kategori**
+
+Jika angka dimasukkan ke dalam vector, tetap akan dikenal sebagai nilai kategoris dan dimasukkan ke dalam levels. Dan karena itu angka akan dikonversi menjadi teks.
+
+Contoh :
+```{R}
+#Buatlah factor bernama factor.sksr dengan isi c(18, 16, 24, 21, 20, 19)
+factor.sks <- factor(c(18, 16, 24, 21, 20, 19)) #[.1.]
+#Tampilkan variabel factor.sks 
+factor.sks#[.2.]
+```
+
+**NA, NaN, NULL pada saat pembentukan Factor**
+
+NA, NULL dan NaN adalah tiga nilai khusus untuk merepresentasikan missing values atau nilai yang hilang di R.
+
+Jika ketiganya dimasukkan ke dalam factor melalui deklarasi vector, maka prinsip berikut tetap berlaku:
+Na dan NaN akan menjadi bagian dari isi factor, NULL akan dihilangkan dan hanya NaN yang akan dikenali sebagai levels
+
+sebagai contoh:
+```{R}
+factor(c("Kalkulus", "Statistika", NA, "Statistika", NaN, "Aljabar", NULL, NULL, "Kalkulus"))
+```
+
+Setelah di run terlihat nilai NULL dibuang di tampilan isi factor, kemudian pada levels nilai NA juga dibuang.
+
+**Menghitung panjang Factor dengan length**
+
+Panjang factor dapat dihitung dengan menggunakan function length dengan syntax sederhana berikut.
+
+length(variabel)
+
+Hanya nilai NULL yang tidak terhitung sebagai bagian dari factor.
+
+Contoh :
+```{R}
+#Buatlah variabel factor.matkul dengan isi berupa vector c("Kalkulus", "Statistika", NA, "Statistika", NaN, "Aljabar", NULL, NULL, "Kalkulus") 
+factor.matkul <- factor(c("Kalkulus", "Statistika", NA, "Statistika", NaN, "Aljabar", NULL, NULL, "Kalkulus"))
+#Tampilkan panjang dari variabel factor.matkul
+length(factor.matkul)#[.] 
+```
+
+**Menyusun levels dari awal**
+
+Sejauh ini factor yang kita buat seakan-akan hanya bisa dirubah isinya, namun bukan urutannya. Ini kita bisa kendalikan juga dengan memberikan nilai-nilai kategori sesuai urutan yang kita inginkan pada argumen levels di function factors.
+
+factor(., levels = .)
+
+Sebagai contoh, agar levels bernilai urut dari "Sen" s/d "Rab" maka pada saat membuat factor kita harus sisipkan argumen labels sebagai berikut:
+
+factor(., levels = c("Sen","Sel","Rab")
+
+Contoh penggunaan :
+```{R}
+#variabel factor dengan isi vector c("Sen","Sel","Rab","Sen","Sel") 
+factor(c("Sen","Sel","Rab","Sen","Sel"), levels = c("Sen","Sel","Rab"))
+```
+
+# List
+
+List adalah jenis data di R yang mirip dengan vector, perbedaannya adalah list dapat menyimpan lebih dari satu jenis tipe data.Untuk memasukkan isi ke dalam struktur data ini kita gunakan function list.
+
+Sebagai contoh, untuk membuat list yang isinya campuran jenis data "psds", angka 1.0, dan "matematika"- maka perintahnya adalah sebagai berikut.
+
+list("psds", 1.0, "matematika").
+
+Contoh Penggunaan :
+```{r}
+# List disimpan dalam variabel dengan nama list_random
+list_acak <- list("psds", 1.0, "matematika")
+
+# Menampilkan isi list
+list_acak 
+
+# List disimpan dalam variabel dengan nama perguruan_tinggi
+perguruan_tinggi <- list(universitas = "Ahmad Dahlan", kota = "Yogyakarta")
+
+# Menampilkan isi list perguruan_tinggi
+perguruan_tinggi
+
+# Buat variabel kota sesuai permintaan soal
+Fakultas <- list(prodi="Matematika", akreditasi="A", jumlah_mahasiswa=450)
+# Tampilkan isi variabel list Fakultas
+Fakultas
+```
+
+**List Index**
+
+Untuk mengambil isi list, kita bisa mengambil dari posisi index-nya, ketentuan dan caranya sama persis dengan vector.
+
+Contoh: Untuk mengambil posisi kedua dari variabel list list_acak kita bisa gunakan
+
+list_acak[2] atau list_acak[[2]].
+
+Contoh Penggunaan:
+```{r}
+# Membentuk list dengan 2 angka dan 1 character
+list_acak <- list("psds", 1.0, "matematika")
+
+# Menampilkan index kedua dengan aksesor kurung siku tunggal 
+list_acak[2]
+
+# Menampilkan index kedua dengan aksesor kurung siku ganda
+list_acak[[2]]
+
+# Menampilkan index kedua s/d ketiga
+list_acak[2:3]
+```
+
+# MISSING VALUES IN R
+
+Ada beberapa nilai khusus yang penting di R, termasuk NA, NaN, Inf, dan NULL. 
+
+**NA**
+
+NA berarti nilai yang hilang (Tidak Tersedia). 
+Untuk menguji NA, gunakan is.na().
+sebagai contoh :
+```{r}
+x<-c(1,2,3,NA)
+is.na(x)
+```
+
+**NaN**
+
+NaN berarti Bukan Angka.Biasanya NaN berasal dari 0/0.
+Untuk menguji NaN, gunakan is.nan().
+Sebagai contoh :
+```{r}
+y<-c(1,2,3,0/0)
+is.nan(y)
+```
+
+**Inf**
+
+Seperti NaN, Inf juga dihasilkan oleh komputasi numerik, seperti 1/0.Tapi tidak seperti NaN, Inf bukanlah NA. Inf adalah nilai yang sangat besar, lebih besar dari angka lainnya.
+Inf dapat diuji dengan is.infinite (x) atau x == Inf.
+Sebagai contoh :
+```{r}
+z<-c(1/0,3,4,5)
+is.infinite(z)
+```
+
+**NULL**
+
+NULL digunakan setiap kali ada kebutuhan untuk menunjukkan atau menentukan bahwa suatu objek tidak ada. 
+Untuk menguji NULL, gunakan is.null
+Sebagai contoh :
+```{r}
+a<-c(NULL,5,7)
+is.null(a)
+```
+
+Mengapa FALSE? 
+Ini dikarenakan didalam vector tersebut masih terdapat data/objek yang lain.
+
+## The End Of The Notebook
+Alhamdulillah
