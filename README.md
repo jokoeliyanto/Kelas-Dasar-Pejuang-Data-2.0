@@ -8,7 +8,7 @@ Center for Data Science Studies, Mathematics Study Program
 Ahmad Dahlan University.
 
 The following is a list of the contents of this repository:
-1. [KD0101A] - Introduction to Google Colab
+1. [KD0101A] - [Introduction to Google Colab](https://github.com/jokoeliyanto/Kelas-Dasar-Pejuang-Data-2.0/blob/main/%5BKD0101A%5D_Pengenalan_Google_Colaboratory.ipynb)
 
 
 [BAHASA INDONESIA]
