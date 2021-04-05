@@ -17,6 +17,22 @@ The following is a list of the contents of this repository:
 7. [KD0302] - Vector in R
 8. [KD0401] - Python Data Frame
 9. [KD0402] - R Data Frame
+10. [KD0501] - Function, If, dan Looping in Python
+11. [KD0502] - Function, If, dan Looping in R
+12. Python Modul Recap
+13. MINI PROJECT
+14. [KD0601] - Matrix in Python Part 1
+15. [KD0602] - Matrix in R Part 1
+16. [KD0701] - Matrix in Python Part 2
+17. [KD0702] - Matrix in R Part 2
+18. [KD0801] - Data Visualization in Python Part 1
+19. [KD0802] - Data Visualization in R Part 1
+20. [KD0901] - Data Visualization in Python Part 2
+21. [KD0902] - Data Visualization in R Part 2
+22. [KD1001] - EDA & Data Preprocessing in Python
+23. [KD1002] - EDA & Data Preprocessing in R
+24. FINAL PROJECT
+
 
 [BAHASA INDONESIA]
 
@@ -34,4 +50,19 @@ Berikut daftar isi dari repository ini:
 7. [KD0302] - [Vektor Pada R](https://raw.githubusercontent.com/jokoeliyanto/Kelas-Dasar-Pejuang-Data-2.0/main/%5BKD0302%5D%20Vektor%20Pada%20R.R)
 8. [KD0401] - [Data Frame Pada Python](https://github.com/jokoeliyanto/Kelas-Dasar-Pejuang-Data-2.0/blob/main/%5BKD0401%5DData_Frame_Pada_Python.ipynb)
 9. [KD0402] - Data Frame Pada R
+10. [KD0501] - Fungsi, Percabangan, dan Perulangan Pada Python
+11. [KD0502] - Fungsi, Percabangan, dan Perulangan Pada R
+12. Python Modul Recap
+13. MINI PROJECT
+14. [KD0601] - Matriks Pada Python Bagian 1
+15. [KD0602] - Matriks Pada R Bagian 1
+16. [KD0701] - Matriks Pada Python Bagian 2
+17. [KD0702] - Matriks Pada R Bagian 2
+18. [KD0801] - Visualisasi Data Pada Python Bagian 1
+19. [KD0802] - Visualisasi Data Pada R Bagian 1
+20. [KD0901] - Visualisasi Data Pada Python Bagian 2
+21. [KD0902] - Visualisasi Data Pada R Bagian 2
+22. [KD1001] - EDA & Data Preprocessing Pada Python
+23. [KD1002] - EDA & Data Preprocessing Pada R
+24. FINAL PROJECT
 
